@@ -16,9 +16,30 @@
     <h1>Iniciando estudos com DOM</h1>
     <p>Aqui vai o resultado</p>
     <p>Aprendendo a usar o <strong>DOM</strong> em JavaScritp.</p>
-    <div>Clique em mim!</div>
+    <div id="msg">Clique em mim!</div>
+    <div name="nome">Esse é meu nome</div>
+    <div class="classe">Essa é minha classe</div>
     <script>
-        
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[1] //Selecionando utilizando Marca/TAG
+
+        var s = window.document.querySelector('div#msg')
+        s.style.background = 'yellow'
+        s.style.color = 'black'
+
+        /*
+        var d = window.document.getElementById('msg') //Selecionando utilizando ID
+        d.style.background = 'green'
+        d.innerText = 'Estou aguardando...' //Adiciona um texto dentro da div
+        */
+        /*
+        var n = document.getElementsByName('nome')[0] //Selecionando utilizando NOME
+        n.innerText = 'Esse é o meu nome de TESTE'
+        */
+       /*
+       var c = document.getElementsByClassName('classe')[0] //Selecionando utilizando Classe
+       c.style.color = 'purple'
+       */
     </script>
 </body>
 </html>
