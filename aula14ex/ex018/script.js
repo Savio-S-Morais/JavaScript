@@ -1,11 +1,22 @@
 function calcular() {
-    let num = Number(document.getElementById("numero").value)
+    let num = document.getElementById("numero")
     let result = document.getElementById("result")
 
-    for(let i = 1; i <= 10; i++){
-        multi = num * i
+    if(num == 0){
+        window.alert('Por favor, digite um número!')
+    } else {
+        let n = Number(num.value)
+        result.innerHTML = ""
+        for(let i = 1; i <= 10; i++){
+            let item = document.createElement('option')
+            item.text = `${n} x ${i} = ${n * i}`
+            result.appendChild(item)
 
-        result.innerHTML += `<p>${num} x ${i} = ${multi}</p>`
-        console.log(`${num} x ${i} = ${multi}`)
+            /*multi = n * i
+    
+            console.log(`${n} x ${i} = ${multi}`)*/
+        }
     }
+
+    
 }
