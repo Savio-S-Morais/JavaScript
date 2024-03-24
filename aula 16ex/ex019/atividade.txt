@@ -1,0 +1,12 @@
+Pegar valores de 1 a 100.
+
+Adicionar em um array e exibir as adições no select
+
+Ao clicar em finalizar, ele deve exibir na div#res as seguintes informações:
+- o total de número/indices
+- O maior valor informado
+- o menor valor informado
+- A soma de todos os valores
+- a média de todos os valores
+
+Caso não tenha sido adicionado valores, ao clicar no botão de finalizar aparecer a mensagem "Adicione valores antes de finalizar"
