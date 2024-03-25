@@ -33,9 +33,26 @@ function adicionar() {
 }
 
 function finalizar() {
-    if(valores != 0) {
+    if(valores.length == 0) {
         window.alert("Função ainda em desenvolvimento")
     } else {
-        window.alert("Adicione valores antes de finalizar")
+        calcular(valores)
     }
 }
+
+function calcular(valores) {
+    console.log(valores)
+    res.innerHTML += `<br>O total de valores são ${valores.length}`
+    valores.sort()
+    console.log(valores)
+    res.innerHTML += `<br>O maior valor informado foi ${Math.max(Number(valores))}`
+    res.innerHTML += `<br>O menor valor informado foi ${valores[0]}`
+
+    let soma = soma
+    for(let i = 0; i < valores.length; i++) {
+        soma = valores[i] + valores[i++]
+    }
+
+    console.log(`O resultado da soma foi de $`)
+}
+
