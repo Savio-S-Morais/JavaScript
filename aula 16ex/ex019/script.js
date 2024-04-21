@@ -27,32 +27,42 @@ function adicionar() {
         let exibe = document.createElement('option') //Cria a tag option
         exibe.text = `Valor ${num.value} adicionado` 
         lista.appendChild(exibe) //Vincula a tag option para dentro do Select (variavel lista)
+        res.innerHTML = ''
     } else {
         window.alert("Valor invalido ou já encontrado na lista.")
     }
+    //Zerando input para adicionar outro número
+    num.value = ''
+    num.focus()
 }
 
 function finalizar() {
-    if(valores.length == 0) {
-        window.alert("Função ainda em desenvolvimento")
+    if (valores.length == 0) {
+        window.alert("Adicione valores antes de finalizar")
     } else {
-        calcular(valores)
+        let total = valores.length //Verificando o total de números cadastrados
+        let maior = valores[0]
+        let menor = valores[0]
+        let soma = 0
+        let media = 0
+        for(let pos in valores) {
+            soma += valores[pos]
+            //Verificando o maior e menor valor
+            if(valores[pos] > maior) {
+                maior = valores[pos]
+            }
+            if(valores[pos] < menor) {
+                menor = valores[pos]
+            }
+        }
+        media = soma/total
+        
+
+        res.innerHTML = ''
+        res.innerHTML += `<p> Ao todo, temos ${total} números cadastrados.</p>`
+        res.innerHTML += `<p> O maior valor informado foi ${maior}</p>`
+        res.innerHTML += `<p> O menor valor informado foi ${menor}</p>`
+        res.innerHTML += `<p> A soma dos valores informado é de ${soma}</p>`
+        res.innerHTML += `<p> A média dos valores informados é de ${media}</p>`
     }
 }
-
-function calcular(valores) {
-    console.log(valores)
-    res.innerHTML += `<br>O total de valores são ${valores.length}`
-    valores.sort()
-    console.log(valores)
-    res.innerHTML += `<br>O maior valor informado foi ${Math.max(Number(valores))}`
-    res.innerHTML += `<br>O menor valor informado foi ${valores[0]}`
-
-    let soma = soma
-    for(let i = 0; i < valores.length; i++) {
-        soma = valores[i] + valores[i++]
-    }
-
-    console.log(`O resultado da soma foi de $`)
-}
-
